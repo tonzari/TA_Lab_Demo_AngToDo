@@ -1,0 +1,9 @@
+.todo-item {
+    background-color: #EEEEEE;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.button-container {
+   display: inline; 
+}

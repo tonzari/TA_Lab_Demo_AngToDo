@@ -1,0 +1,31 @@
+<h2>Search</h2>
+
+<div>
+    <form #searchForm="ngForm" (ngSubmit)="setSearchTerm(searchForm)">
+        <input type="text" name="filter" ngModel>
+    </form>
+</div>
+
+<h2>Your to do list</h2>
+
+<div *ngFor="let task of TaskList">
+    <div class="todo-item">
+        <h3>{{task.task}}</h3>
+        <p><strong>Status: </strong>{{getStatus(task)}}</p>
+        <div class="button-container" *ngIf="!task.completed">
+            <button (click)="completeTask(task)">Complete</button>
+        </div>
+        <div class="button-container">
+            <button (click)="deleteTask(task)">Remove</button>
+        </div>
+    </div>
+</div>
+
+<h2>Add a new Task</h2>
+
+<div>
+    <form #addTaskForm="ngForm" (ngSubmit)="addTask(addTaskForm)">
+        <input type="text" name="task" ngModel>
+        <button>Add</button>
+    </form>
+</div>
